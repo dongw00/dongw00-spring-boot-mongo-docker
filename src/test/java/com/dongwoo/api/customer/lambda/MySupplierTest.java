@@ -11,7 +11,7 @@ class MySupplierTest {
 
     @Test
     void main() {
-        Supplier<String> stringSupplier = () -> new String("No pain, No Gain");
+        Supplier<String> stringSupplier = () -> "No pain, No Gain";
         assertThat(stringSupplier.get(), is(equalTo("No pain, No Gain")));
     }
 }

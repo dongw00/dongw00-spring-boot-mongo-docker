@@ -24,6 +24,7 @@ class MyFunctionTest {
         List<R> newList = new ArrayList<>();
         for (T e : list) {
             newList.add(function.apply(e));
+            System.out.println(newList.get(newList.size() - 1));
         }
         return newList;
     }

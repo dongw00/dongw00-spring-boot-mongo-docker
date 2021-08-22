@@ -29,7 +29,6 @@ class MyPredicateTest {
         assertThat(newList, is(equalTo(Arrays.asList("Bithumb", "Kakaotalk", "Bitcamp"))));
 
         Predicate<String> filter = s -> s.contains("talk");
-
         List<String> newList2 = filterList(list, filter);
         assertThat(newList2, is(equalTo(Collections.singletonList("Kakaotalk"))));
     }

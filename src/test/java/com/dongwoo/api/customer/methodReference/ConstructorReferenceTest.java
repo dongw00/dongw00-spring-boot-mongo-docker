@@ -9,17 +9,24 @@ class ConstructorReferenceTest {
     @Test
     void main() {
         Function<Runnable, Thread> threadGenerator = Thread::new;
-        Runnable t1 = () -> System.out.println("t1 execute");
-        Runnable t2 = () -> System.out.println("t2 execute");
+//        Runnable t1 = () -> System.out.println("t1 execute");
+//        Runnable t2 = () -> System.out.println("t2 execute");
+//
+//        Thread thead1 = threadGenerator.apply(t1);
+//        Thread thead2 = threadGenerator.apply(t2);
+//
+//        thead1.start();
+//        thead2.start();
 
-        Thread thead1 = threadGenerator.apply(t1);
-        Thread thead2 = threadGenerator.apply(t2);
-
-        thead1.start();
-        thead2.start();
-
+        // Code chaining
         threadGenerator
             .apply(() -> System.out.println("t3 execute"))
+            .start();
+        threadGenerator
+            .apply(() -> System.out.println("t4 execute"))
+            .start();
+        threadGenerator
+            .apply(() -> System.out.println("t5 execute"))
             .start();
     }
 }

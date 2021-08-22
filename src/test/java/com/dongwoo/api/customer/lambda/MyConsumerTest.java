@@ -14,7 +14,7 @@ class MyConsumerTest {
         List<Integer> list = Arrays.asList(1, 2, 3);
         Consumer<Integer> consumer = System.out::println;
         consumer.accept(56);
-        printElement(list, consumer);
+        // printElement(list, consumer);
     }
 
     private static <T> void printElement(List<T> list, Consumer<T> consumer) {
